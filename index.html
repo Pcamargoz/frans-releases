@@ -18,9 +18,9 @@ footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
 <header class="hero"><img src="wave.png" width="110" height="110" alt="Frans acenando"><div><h1>Apps Frans</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p></div></header>
 <div class="grid">
  <section class="card" data-repo="frans-editor"><h2>Frans Editor</h2><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p><span class="ver">Versão <b class="v">mais recente</b></span>
-  <div class="btns"><a class="btn primary mac" href="#">Baixar para Mac</a><a class="btn win" href="#">Windows</a></div></section>
+  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a></div></section>
  <section class="card" data-repo="frans-orquestrador"><h2>Frans Orquestrador</h2><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">mais recente</b></span>
-  <div class="btns"><a class="btn primary mac" href="#">Baixar para Mac</a><a class="btn win" href="#">Windows</a></div></section>
+  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a></div></section>
 </div>
 <details><summary>O Mac diz que o app é de desenvolvedor não identificado</summary><div class="help"><img src="present.png" width="80" height="80" alt=""><ol>
 <li>Abra o <b>.dmg</b> e arraste o app para Aplicativos.</li><li>Abra o app uma vez; o Mac vai bloquear.</li>
@@ -33,15 +33,13 @@ footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
 const OWNER='Pcamargoz', RELEASES='frans-releases';
 fetch(`https://api.github.com/repos/${OWNER}/${RELEASES}/releases`).then(r=>r.json()).then(rels=>{
  document.querySelectorAll('.card').forEach(c=>{
-  const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-',''))));
+  const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-','').toLowerCase())));
   const fallback=`https://github.com/${OWNER}/${RELEASES}/releases/latest`;
   c.querySelectorAll('a').forEach(a=>a.href=fallback);
-  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name.replace(/^[a-z-]*v/i,'');
-  const nome=app.replace('frans-',''), f=(ext,tem='')=>rel.assets.find(a=>a.name.includes(nome)&&a.name.includes(tem)&&a.name.endsWith(ext));
-  const arm=f('.dmg','mac-arm64'), intel=f('.dmg','mac-x64'), win=f('.exe'), macBtn=c.querySelector('.mac');
-  if(arm){ macBtn.href=arm.browser_download_url; macBtn.textContent='Mac (Apple Silicon)'; }
-  if(intel){ if(arm){ const b=document.createElement('a'); b.className='btn mac-intel'; b.textContent='Mac (Intel)'; b.href=intel.browser_download_url; macBtn.after(b); } else { macBtn.href=intel.browser_download_url; macBtn.textContent='Baixar para Mac (Intel)'; } }
-  if(win) c.querySelector('.win').href=win.browser_download_url;
+  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name.replace(/^[a-z-]*v/i,''); c.querySelectorAll('a').forEach(a=>a.href=rel.html_url);
+  const k=app.replace('frans-','').toLowerCase(), f=(ext,t)=>rel.assets.find(a=>{const n=a.name.toLowerCase();return n.includes(k)&&n.endsWith(ext)&&(!t||n.includes(t))});
+  const mac=f('.dmg','arm64'), macx=f('.dmg','x64'), win=f('.exe');
+  if(mac) c.querySelector('.mac').href=mac.browser_download_url; if(macx) c.querySelector('.macx').href=macx.browser_download_url; if(win) c.querySelector('.win').href=win.browser_download_url;
  });
 }).catch(()=>{});
 </script></body></html>

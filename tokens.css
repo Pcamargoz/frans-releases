@@ -1,7 +1,4 @@
-/* ControlFree — tokens "Frans" (fonte única). Decisão do Pedro em 09/10/2026: paleta padrão = vermelho do dragão + creme/bege.
-   Substitui o primário roxo/rosa da nota "Design - Decisões e Design System" §15. Contrastes em tokens.md (WCAG 2.2 AA).
-   Uso: importe este arquivo; no Tailwind v4 o bloco @theme inline expõe as cores como utilitários (bg-primary, text-muted-foreground…).
-   Claro em :root; escuro em .dark. O dragão (--dragon*) é só marca/mascote: nunca estado de UI nem erro. */
+/* ControlFree — tokens "Frans". Claro em :root; escuro em .dark. */
 :root{
   /* superfícies */
   --background:#FBF6E9;          /* papel creme */
