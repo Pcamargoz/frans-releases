@@ -18,28 +18,33 @@ footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
 <header class="hero"><img src="wave.png" width="110" height="110" alt="Frans acenando"><div><h1>Apps Frans</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p></div></header>
 <div class="grid">
  <section class="card" data-repo="frans-editor"><h2>Frans Editor</h2><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p><span class="ver">Versão <b class="v">mais recente</b></span>
-  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a></div></section>
+  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a><a class="btn deb" href="#">Ubuntu/Debian</a><a class="btn lin" href="#">Linux (AppImage)</a></div></section>
  <section class="card" data-repo="frans-orquestrador"><h2>Frans Orquestrador</h2><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">mais recente</b></span>
-  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a></div></section>
+  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a><a class="btn deb" href="#">Ubuntu/Debian</a><a class="btn lin" href="#">Linux (AppImage)</a></div></section>
 </div>
 <details><summary>O Mac diz que o app é de desenvolvedor não identificado</summary><div class="help"><img src="present.png" width="80" height="80" alt=""><ol>
 <li>Abra o <b>.dmg</b> e arraste o app para Aplicativos.</li><li>Abra o app uma vez; o Mac vai bloquear.</li>
 <li>Vá em <b>Ajustes do Sistema › Privacidade e Segurança</b> e clique em <b>Abrir Mesmo Assim</b>.</li><li>Só precisa fazer isso na primeira vez.</li></ol></div></details>
 <details><summary>Windows mostrou "O Windows protegeu o computador"</summary><ol><li>Clique em <b>Mais informações</b>.</li><li>Clique em <b>Executar mesmo assim</b>.</li></ol></details>
 <footer>ControlFree · Os apps se atualizam sozinhos depois de instalados.</footer>
+<details class="help"><summary>Linux: o app não abre?</summary><p>No Ubuntu ou Debian, prefira o <b>.deb</b>: <code>sudo apt install ./frans-*.deb</code>. O AppImage é pras outras distribuições:</p><ol><li>Dê permissão: <code>chmod +x frans-*.AppImage</code>.</li><li>No Ubuntu 22.04 ou mais novo, instale o FUSE 2: <code>sudo apt install libfuse2t64</code> (no 22.04, <code>libfuse2</code>).</li><li>Abra com dois cliques ou pelo terminal.</li></ol></details>
 </main>
 <script>
 // Configure o repositório público de releases aqui
 const OWNER='Pcamargoz', RELEASES='frans-releases';
-fetch(`https://api.github.com/repos/${OWNER}/${RELEASES}/releases`).then(r=>r.json()).then(rels=>{
+// sem arquivo/sem resposta da API: cada botão leva à lista de releases do próprio app
+const LISTA=app=>`https://github.com/${OWNER}/${app}-releases/releases`;
+document.querySelectorAll('.card').forEach(c=>c.querySelectorAll('a').forEach(a=>a.href=LISTA(c.dataset.repo)));
+const get=r=>{const k='rel:'+r,c=JSON.parse(sessionStorage.getItem(k)||'null');if(c&&Date.now()-c.t<6e5)return Promise.resolve(c.d);
+ return fetch(`https://api.github.com/repos/${OWNER}/${r}/releases`).then(x=>x.ok?x.json():null).then(d=>{if(Array.isArray(d)){sessionStorage.setItem(k,JSON.stringify({t:Date.now(),d}));return d}return []}).catch(()=>[])};
+Promise.all(['frans-editor-releases','frans-orquestrador-releases',RELEASES].map(get)).then(l=>{const rels=l.flat();
  document.querySelectorAll('.card').forEach(c=>{
   const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-','').toLowerCase())));
-  const fallback=`https://github.com/${OWNER}/${RELEASES}/releases/latest`;
-  c.querySelectorAll('a').forEach(a=>a.href=fallback);
-  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name.replace(/^[a-z-]*v/i,''); c.querySelectorAll('a').forEach(a=>a.href=rel.html_url);
+  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name.replace(/^.*?v(?=\d)/,'');
   const k=app.replace('frans-','').toLowerCase(), f=(ext,t)=>rel.assets.find(a=>{const n=a.name.toLowerCase();return n.includes(k)&&n.endsWith(ext)&&(!t||n.includes(t))});
   const mac=f('.dmg','arm64'), macx=f('.dmg','x64'), win=f('.exe');
-  if(mac) c.querySelector('.mac').href=mac.browser_download_url; if(macx) c.querySelector('.macx').href=macx.browser_download_url; if(win) c.querySelector('.win').href=win.browser_download_url;
+  const off=(b,t)=>{b.removeAttribute('href');b.setAttribute('aria-disabled','true');b.style.opacity='.55';b.textContent+=' (em breve)'};
+  mac?c.querySelector('.mac').href=mac.browser_download_url:off(c.querySelector('.mac')); if(!win) off(c.querySelector('.win')); const deb=f('-amd64.deb'); deb?c.querySelector('.deb').href=deb.browser_download_url:off(c.querySelector('.deb')); const lin=f('.appimage'); lin?c.querySelector('.lin').href=lin.browser_download_url:off(c.querySelector('.lin')); macx?c.querySelector('.macx').href=macx.browser_download_url:off(c.querySelector('.macx')); if(win) c.querySelector('.win').href=win.browser_download_url;
  });
 }).catch(()=>{});
 </script></body></html>
