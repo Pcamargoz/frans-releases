@@ -1,0 +1,44 @@
+<!doctype html><html lang="pt-BR" class="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baixar apps Frans · ControlFree</title><link rel="icon" href="icon.png"><link rel="stylesheet" href="tokens.css">
+<style>
+body{margin:0;background:var(--background);color:var(--foreground);font-family:system-ui,sans-serif;line-height:1.5}
+main{max-width:960px;margin:0 auto;padding:48px 20px}
+.hero{display:flex;align-items:center;gap:24px;margin-bottom:40px}.hero h1{margin:0;font-size:2.2rem}.hero p{margin:4px 0 0;color:var(--muted-foreground)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.card h2{margin:0}.card p{margin:0;color:var(--muted-foreground)}.ver{font-size:.85rem;color:var(--muted-foreground)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+a.btn{text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid var(--border);color:var(--foreground)}
+a.btn.primary{background:var(--primary);color:var(--primary-foreground);border-color:transparent}a.btn:hover{filter:brightness(1.1)}
+a:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:28px}summary{cursor:pointer;font-weight:600}
+.help{display:flex;gap:16px;align-items:flex-start}ol{margin:8px 0 0;padding-left:20px}
+footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
+</style></head><body><main>
+<header class="hero"><img src="wave.png" width="110" height="110" alt="Frans acenando"><div><h1>Apps Frans</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p></div></header>
+<div class="grid">
+ <section class="card" data-repo="frans-editor"><h2>Frans Editor</h2><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p><span class="ver">Versão <b class="v">mais recente</b></span>
+  <div class="btns"><a class="btn primary mac" href="#">Baixar para Mac</a><a class="btn win" href="#">Windows</a></div></section>
+ <section class="card" data-repo="frans-orquestrador"><h2>Frans Orquestrador</h2><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">mais recente</b></span>
+  <div class="btns"><a class="btn primary mac" href="#">Baixar para Mac</a><a class="btn win" href="#">Windows</a></div></section>
+</div>
+<details><summary>O Mac diz que o app é de desenvolvedor não identificado</summary><div class="help"><img src="present.png" width="80" height="80" alt=""><ol>
+<li>Abra o <b>.dmg</b> e arraste o app para Aplicativos.</li><li>Abra o app uma vez; o Mac vai bloquear.</li>
+<li>Vá em <b>Ajustes do Sistema › Privacidade e Segurança</b> e clique em <b>Abrir Mesmo Assim</b>.</li><li>Só precisa fazer isso na primeira vez.</li></ol></div></details>
+<details><summary>Windows mostrou "O Windows protegeu o computador"</summary><ol><li>Clique em <b>Mais informações</b>.</li><li>Clique em <b>Executar mesmo assim</b>.</li></ol></details>
+<footer>ControlFree · Os apps se atualizam sozinhos depois de instalados.</footer>
+</main>
+<script>
+// Configure o repositório público de releases aqui
+const OWNER='Pcamargoz', RELEASES='frans-releases';
+fetch(`https://api.github.com/repos/${OWNER}/${RELEASES}/releases`).then(r=>r.json()).then(rels=>{
+ document.querySelectorAll('.card').forEach(c=>{
+  const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-',''))));
+  const fallback=`https://github.com/${OWNER}/${RELEASES}/releases/latest`;
+  c.querySelectorAll('a').forEach(a=>a.href=fallback);
+  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name;
+  const f=ext=>rel.assets.find(a=>a.name.includes(app.replace('frans-',''))&&a.name.endsWith(ext));
+  const mac=f('.dmg'), win=f('.exe'); if(mac) c.querySelector('.mac').href=mac.browser_download_url; if(win) c.querySelector('.win').href=win.browser_download_url;
+ });
+}).catch(()=>{});
+</script></body></html>
