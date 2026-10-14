@@ -36,9 +36,12 @@ fetch(`https://api.github.com/repos/${OWNER}/${RELEASES}/releases`).then(r=>r.js
   const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-',''))));
   const fallback=`https://github.com/${OWNER}/${RELEASES}/releases/latest`;
   c.querySelectorAll('a').forEach(a=>a.href=fallback);
-  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name;
-  const f=ext=>rel.assets.find(a=>a.name.includes(app.replace('frans-',''))&&a.name.endsWith(ext));
-  const mac=f('.dmg'), win=f('.exe'); if(mac) c.querySelector('.mac').href=mac.browser_download_url; if(win) c.querySelector('.win').href=win.browser_download_url;
+  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name.replace(/^[a-z-]*v/i,'');
+  const nome=app.replace('frans-',''), f=(ext,tem='')=>rel.assets.find(a=>a.name.includes(nome)&&a.name.includes(tem)&&a.name.endsWith(ext));
+  const arm=f('.dmg','mac-arm64'), intel=f('.dmg','mac-x64'), win=f('.exe'), macBtn=c.querySelector('.mac');
+  if(arm){ macBtn.href=arm.browser_download_url; macBtn.textContent='Mac (Apple Silicon)'; }
+  if(intel){ if(arm){ const b=document.createElement('a'); b.className='btn mac-intel'; b.textContent='Mac (Intel)'; b.href=intel.browser_download_url; macBtn.after(b); } else { macBtn.href=intel.browser_download_url; macBtn.textContent='Baixar para Mac (Intel)'; } }
+  if(win) c.querySelector('.win').href=win.browser_download_url;
  });
 }).catch(()=>{});
 </script></body></html>
