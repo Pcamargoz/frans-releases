@@ -10,41 +10,99 @@ main{max-width:960px;margin:0 auto;padding:48px 20px}
 .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
 a.btn{text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid var(--border);color:var(--foreground)}
 a.btn.primary{background:var(--primary);color:var(--primary-foreground);border-color:transparent}a.btn:hover{filter:brightness(1.1)}
+.btn.off{display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 16px;border-radius:10px;font-weight:600;background:var(--primary-edge);color:#fff;border:2px dashed var(--primary-hover);cursor:not-allowed;user-select:none}.btn.off small{font-size:.75rem;font-weight:700;letter-spacing:.02em}
+.devbadge{display:flex;gap:12px;align-items:center}.devbadge p{margin:4px 0 0}.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.95rem;font-weight:800;background:var(--primary-edge);color:#fff;border:2px solid var(--primary)}
 a:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
 details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:28px}summary{cursor:pointer;font-weight:600}
 .help{display:flex;gap:16px;align-items:flex-start}ol{margin:8px 0 0;padding-left:20px}
 footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
+.first{margin-top:44px;scroll-margin-top:20px}
+.first-head{display:flex;align-items:center;gap:20px;margin-bottom:20px}.first-head h2{margin:0;font-size:1.6rem}.first-head p{margin:6px 0 0;color:var(--muted-foreground);max-width:60ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{font:inherit;font-weight:600;cursor:pointer;padding:10px 18px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--foreground)}
+.tabs button[aria-selected=true]{background:var(--primary);color:var(--primary-foreground);border-color:transparent}
+.tabs button:hover{filter:brightness(1.1)}
+.first button:focus-visible,.first a:focus-visible,.first [tabindex]:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.os{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px}
+.os h3{margin:0 0 4px;font-size:1.2rem}.os .lead{margin:0 0 12px;color:var(--muted-foreground)}
+.os ol{padding-left:22px;margin:0 0 12px}.os li{margin:6px 0}.os li::marker{color:var(--primary);font-weight:700}
+.os h4{margin:18px 0 6px;font-size:1rem}.os p{margin:8px 0}
+.note{border-left:3px solid var(--primary);padding:4px 0 4px 12px;color:var(--muted-foreground);margin:10px 0}
+.cmd{display:flex;gap:8px;align-items:flex-start;background:var(--background);border:1px solid var(--border);border-radius:10px;padding:8px 8px 8px 14px;margin:8px 0}
+.cmd pre{flex:1;min-width:0;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font-family:var(--font-mono,ui-monospace,monospace);font-size:.88rem;padding-top:5px}
+.cmd button{flex:none;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--foreground)}
+.cmd button:hover{filter:brightness(1.15)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jump{margin:28px 0 0;color:var(--muted-foreground)}.jump a{color:var(--foreground);font-weight:600}
 </style></head><body><main>
 <header class="hero"><img src="wave.png" width="110" height="110" alt="Frans acenando"><div><h1>Apps Frans</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p></div></header>
 <div class="grid">
- <section class="card" data-repo="frans-editor"><h2>Frans Editor</h2><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p><span class="ver">Versão <b class="v">mais recente</b></span>
-  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a><a class="btn deb" href="#">Ubuntu/Debian</a><a class="btn lin" href="#">Linux (AppImage)</a></div></section>
+ <section class="card dev" data-dev="1" aria-labelledby="ed-t"><h2 id="ed-t">Frans Editor</h2><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p>
+  <div class="devbadge"><img src="present.png" width="48" height="48" alt=""><div><span class="badge">Em desenvolvimento</span><p>Estamos evoluindo bastante o Editor. Em breve ele volta para download.</p></div></div>
+  <div class="btns"><span class="btn off" aria-disabled="true" role="link">Mac com chip Apple (M1, M2…)<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Mac Intel<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Windows<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Ubuntu/Debian<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Linux (AppImage)<small>Em desenvolvimento</small></span></div></section>
  <section class="card" data-repo="frans-orquestrador"><h2>Frans Orquestrador</h2><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">mais recente</b></span>
   <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a><a class="btn deb" href="#">Ubuntu/Debian</a><a class="btn lin" href="#">Linux (AppImage)</a></div></section>
 </div>
-<details><summary>O Mac diz que o app é de desenvolvedor não identificado</summary><div class="help"><img src="present.png" width="80" height="80" alt=""><ol>
-<li>Abra o <b>.dmg</b> e arraste o app para Aplicativos.</li><li>Abra o app uma vez; o Mac vai bloquear.</li>
-<li>Vá em <b>Ajustes do Sistema › Privacidade e Segurança</b> e clique em <b>Abrir Mesmo Assim</b>.</li><li>Só precisa fazer isso na primeira vez.</li></ol></div></details>
-<details><summary>Windows mostrou "O Windows protegeu o computador"</summary><ol><li>Clique em <b>Mais informações</b>.</li><li>Clique em <b>Executar mesmo assim</b>.</li></ol></details>
-<footer>ControlFree · Os apps se atualizam sozinhos depois de instalados.</footer>
-<details class="help"><summary>Linux: o app não abre?</summary><p>No Ubuntu ou Debian, prefira o <b>.deb</b>: <code>sudo apt install ./frans-*.deb</code>. O AppImage é pras outras distribuições:</p><ol><li>Dê permissão: <code>chmod +x frans-*.AppImage</code>.</li><li>No Ubuntu 22.04 ou mais novo, instale o FUSE 2: <code>sudo apt install libfuse2t64</code> (no 22.04, <code>libfuse2</code>).</li><li>Abra com dois cliques ou pelo terminal.</li></ol></details>
+<p class="jump">Primeira vez abrindo? <a href="#primeira-abertura">Veja o passo a passo da primeira abertura</a>.</p>
+<section class="first" id="primeira-abertura" aria-labelledby="pa-titulo">
+ <div class="first-head"><img src="present.png" width="96" height="96" alt="Frans apresentando"><div><h2 id="pa-titulo">Primeira abertura</h2><p>O app Frans ainda não tem assinatura paga, por isso o sistema pergunta uma vez antes de abrir. Depois dessa primeira vez, ele não pergunta de novo. Escolha o seu sistema:</p></div></div>
+ <div class="tabs" role="tablist" aria-label="Sistema operacional">
+  <button role="tab" id="tab-win" aria-controls="p-win" aria-selected="true" type="button">Windows</button>
+  <button role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="false" tabindex="-1" type="button">Mac</button>
+  <button role="tab" id="tab-lin" aria-controls="p-lin" aria-selected="false" tabindex="-1" type="button">Linux</button></div>
+ <div class="os" id="p-win" role="tabpanel" aria-labelledby="tab-win" tabindex="0"><h3>Windows</h3><p class="lead">Vale para o Frans Orquestrador.</p>
+  <ol><li>Abra o <b>.exe</b> baixado. Se aparecer “O Windows protegeu seu computador”, clique em <b>Mais informações</b>.</li><li>Depois clique em <b>Executar assim mesmo</b>.</li></ol>
+  <h4>Se a tela não aparecer e o Windows só bloquear a abertura</h4>
+  <ol><li>Clique com o botão direito no <b>.exe</b> baixado e escolha <b>Propriedades</b>.</li><li>Marque <b>Desbloquear</b> e clique em <b>OK</b>.</li><li>Abra o app de novo.</li></ol>
+  <p class="note">O Windows só pergunta na primeira abertura.</p></div>
+ <div class="os" id="p-mac" role="tabpanel" aria-labelledby="tab-mac" tabindex="0" hidden><h3>Mac</h3><p class="lead">Vale para o Frans Orquestrador.</p>
+  <ol><li>Abra o <b>.dmg</b> e arraste o app para Aplicativos.</li><li>Abra o app uma vez. O Mac vai pedir confirmação.</li><li>Vá em <b>Ajustes do Sistema › Privacidade e Segurança</b> e clique em <b>Abrir Mesmo Assim</b>.</li></ol>
+  <h4>Alternativa pelo Terminal</h4>
+  <p>Só se o caminho acima não funcionar. Este comando serve apenas para o app do Frans; não use em outros apps. As aspas são necessárias por causa do espaço no nome.</p>
+  <div class="cmd"><pre>xattr -dr com.apple.quarantine "/Applications/Frans Orquestrador.app"</pre><button type="button" data-copy>Copiar</button></div></div>
+ <div class="os" id="p-lin" role="tabpanel" aria-labelledby="tab-lin" tabindex="0" hidden><h3>Linux</h3><p class="lead">O <b>.deb</b> é a opção principal, no Ubuntu e no Debian.</p>
+  <div class="cmd"><pre>sudo apt install ./frans-*.deb</pre><button type="button" data-copy>Copiar</button></div>
+  <p>O .deb já cuida do sandbox sozinho, sem ajuste extra.</p>
+  <h4>AppImage</h4>
+  <p>1. O AppImage precisa do FUSE 2. O pacote muda conforme a versão.</p>
+  <p><b>Ubuntu 24.04 e Debian 13:</b></p>
+  <div class="cmd"><pre>sudo apt install libfuse2t64</pre><button type="button" data-copy>Copiar</button></div>
+  <p><b>Ubuntu 22.04:</b></p>
+  <div class="cmd"><pre>sudo apt install libfuse2</pre><button type="button" data-copy>Copiar</button></div>
+  <p>2. Dê permissão de execução:</p>
+  <div class="cmd"><pre>chmod +x frans-*.AppImage</pre><button type="button" data-copy>Copiar</button></div>
+  <p>3. Abra com dois cliques ou pelo terminal:</p>
+  <div class="cmd"><pre>./frans-*.AppImage</pre><button type="button" data-copy>Copiar</button></div></div>
+ <div class="sr" role="status" aria-live="polite" id="copy-status"></div>
+</section>
+<footer>ControlFree · O Orquestrador se atualiza sozinho a partir da 0.4.2 do Orquestrador. Quem tem uma versão anterior instala a nova à mão uma vez.</footer>
 </main>
 <script>
 // Configure o repositório público de releases aqui
-const OWNER='Pcamargoz', RELEASES='frans-releases';
-// sem arquivo/sem resposta da API: cada botão leva à lista de releases do próprio app
-const LISTA=app=>`https://github.com/${OWNER}/${app}-releases/releases`;
-document.querySelectorAll('.card').forEach(c=>c.querySelectorAll('a').forEach(a=>a.href=LISTA(c.dataset.repo)));
-const get=r=>{const k='rel:'+r,c=JSON.parse(sessionStorage.getItem(k)||'null');if(c&&Date.now()-c.t<6e5)return Promise.resolve(c.d);
+const OWNER='Pcamargoz', RELEASES='frans-releases', LISTA=`https://github.com/${OWNER}/${RELEASES}/releases`;
+document.querySelectorAll('.card[data-repo] a').forEach(a=>a.href=LISTA);
+const get=r=>{const k='rel:v3:'+r,c=JSON.parse(sessionStorage.getItem(k)||'null');if(c&&Date.now()-c.t<6e5)return Promise.resolve(c.d);
  return fetch(`https://api.github.com/repos/${OWNER}/${r}/releases`).then(x=>x.ok?x.json():null).then(d=>{if(Array.isArray(d)){sessionStorage.setItem(k,JSON.stringify({t:Date.now(),d}));return d}return []}).catch(()=>[])};
-Promise.all(['frans-editor-releases','frans-orquestrador-releases',RELEASES].map(get)).then(l=>{const rels=l.flat();
- document.querySelectorAll('.card').forEach(c=>{
+Promise.all(['frans-orquestrador-releases',RELEASES].map(get)).then(l=>{const rels=l.flat();
+ document.querySelectorAll('.card[data-repo]').forEach(c=>{
   const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-','').toLowerCase())));
-  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name.replace(/^.*?v(?=\d)/,'');
+  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name;
   const k=app.replace('frans-','').toLowerCase(), f=(ext,t)=>rel.assets.find(a=>{const n=a.name.toLowerCase();return n.includes(k)&&n.endsWith(ext)&&(!t||n.includes(t))});
   const mac=f('.dmg','arm64'), macx=f('.dmg','x64'), win=f('.exe');
   const off=(b,t)=>{b.removeAttribute('href');b.setAttribute('aria-disabled','true');b.style.opacity='.55';b.textContent+=' (em breve)'};
-  mac?c.querySelector('.mac').href=mac.browser_download_url:off(c.querySelector('.mac')); if(!win) off(c.querySelector('.win')); const deb=f('-amd64.deb'); deb?c.querySelector('.deb').href=deb.browser_download_url:off(c.querySelector('.deb')); const lin=f('.appimage'); lin?c.querySelector('.lin').href=lin.browser_download_url:off(c.querySelector('.lin')); macx?c.querySelector('.macx').href=macx.browser_download_url:off(c.querySelector('.macx')); if(win) c.querySelector('.win').href=win.browser_download_url;
+  mac?c.querySelector('.mac').href=mac.browser_download_url:off(c.querySelector('.mac')); if(!win) off(c.querySelector('.win')); const deb=f('-amd64.deb'); deb?c.querySelector('.deb').href=deb.browser_download_url:off(c.querySelector('.deb')); const lin=f('.appimage'); lin?c.querySelector('.lin').href=lin.browser_download_url:off(c.querySelector('.lin')); if(macx) c.querySelector('.macx').href=macx.browser_download_url; if(win) c.querySelector('.win').href=win.browser_download_url;
  });
 }).catch(()=>{});
-</script></body></html>
+</script><script>
+(function(){const tabs=[...document.querySelectorAll('.first [role=tab]')];
+ const sel=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
+ tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault()}})});
+ const st=document.getElementById('copy-status');
+ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+  const txt=b.parentNode.querySelector('pre').textContent;
+  const done=()=>{st.textContent='';setTimeout(()=>st.textContent='Copiado',30);const o=b.textContent;b.textContent='Copiado';setTimeout(()=>b.textContent=o,1800)};
+  const fb=()=>{const a=document.createElement('textarea');a.value=txt;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()};
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(txt).then(done,fb);else fb()}));
+})();
+</script>
+</body></html>
