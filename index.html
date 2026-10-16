@@ -34,19 +34,82 @@ footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
 .cmd button:hover{filter:brightness(1.15)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .jump{margin:28px 0 0;color:var(--muted-foreground)}.jump a{color:var(--foreground);font-weight:600}
-</style></head><body><main>
-<header class="hero"><img src="wave.png" width="110" height="110" alt="Frans acenando"><div><h1>Apps Frans</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p></div></header>
+
+/* ===== Renovação 2026-10: energia e ritmo ===== */
+body{background-color:var(--background);background-image:radial-gradient(900px 420px at 85% -80px,rgb(255 66 57/.22),transparent 70%),radial-gradient(700px 360px at -10% 0,rgb(246 231 182/.08),transparent 70%);background-repeat:no-repeat}
+main{max-width:1040px;padding-top:24px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--foreground);color:var(--background);padding:10px 16px;border-radius:10px;font-weight:700;z-index:10;text-decoration:none}.skip:focus{top:12px;outline:2px solid var(--ring);outline-offset:2px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{font-family:var(--font-logo);font-size:1.5rem;color:var(--foreground)}.logo b{color:var(--primary);font-weight:400}
+.topbar nav{display:flex;gap:6px;flex-wrap:wrap}.topbar nav a{color:var(--foreground);text-decoration:none;font-weight:600;padding:8px 14px;border-radius:999px}.topbar nav a:hover{background:var(--accent)}
+.hero{position:relative;display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:24px;margin:8px 0 36px;padding:36px 36px 28px;border-radius:28px;background:linear-gradient(135deg,var(--accent) 0%,var(--card) 60%);border:1px solid var(--border);box-shadow:var(--elev-pop);overflow:hidden}
+.hero::before{content:"";position:absolute;right:-90px;top:-90px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgb(255 66 57/.35),transparent 68%);pointer-events:none}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.02em;margin:0}.hero h1 em{font-style:normal;color:var(--primary)}
+.hero p{font-size:1.1rem;color:var(--muted-foreground);max-width:46ch;margin:14px 0 0}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.hero-img{position:relative;justify-self:center}.hero-img img{display:block;width:100%;max-width:260px;height:auto;filter:drop-shadow(0 18px 24px rgb(0 0 0/.45))}
+.spark{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--primary)}.spark.s1{top:10%;left:2%}.spark.s2{bottom:18%;right:0;background:var(--brand-cream);width:9px;height:9px}.spark.s3{top:4%;right:12%;width:7px;height:7px;background:var(--brand-cream-3)}
+.update{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin:0 0 36px;padding:18px 24px;border-radius:20px;background:var(--primary-edge);color:#fff;border:2px solid var(--primary);box-shadow:var(--elev-relevo)}
+.update img{width:72px;height:72px}.update h2{margin:0;font-size:1.25rem;font-family:var(--font-display)}.update p{margin:4px 0 0;color:#fff}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-weight:800;font-size:.85rem;background:#fff;color:var(--primary-edge);letter-spacing:.03em;text-transform:uppercase}
+.update a{color:#fff;font-weight:700}
+.section-title{font-family:var(--font-display);font-size:1.7rem;margin:0 0 6px}.section-sub{margin:0 0 20px;color:var(--muted-foreground)}
+.card{position:relative;border-radius:24px;padding:28px;box-shadow:var(--elev-card);transition:transform .25s ease,box-shadow .25s ease;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--primary),var(--brand-cream))}
+.card.dev::before{background:repeating-linear-gradient(90deg,var(--primary-edge) 0 14px,var(--border) 14px 28px)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--elev-pop)}
+.card-head{display:flex;align-items:center;gap:14px}.card-head img{width:64px;height:64px}.card-head h2{font-family:var(--font-display);font-size:1.5rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.85rem;font-weight:700;background:var(--accent);color:var(--accent-foreground);border:1px solid var(--border)}
+.chip.hot{background:var(--primary-edge);color:#fff;border-color:var(--primary)}
+a.btn{transition:transform .15s ease,filter .15s ease}a.btn:hover{transform:translateY(-2px)}a.btn.primary{box-shadow:var(--elev-relevo)}
+a.btn.primary:active{transform:translateY(1px)}
+a.btn.big{padding:14px 24px;font-size:1.05rem;border-radius:14px}
+a.btn.ghost{background:transparent;border:2px solid var(--foreground)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:44px 0 0;padding:0;list-style:none}
+.perks li{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:20px}.perks b{display:block;font-family:var(--font-display);font-size:1.1rem;margin-bottom:4px}.perks span{color:var(--muted-foreground)}
+.perks .ico{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--primary-edge);color:#fff;font-weight:800;margin-bottom:10px}
+.first{background:var(--card);border:1px solid var(--border);border-radius:28px;padding:28px;margin-top:48px}
+footer{border-top:1px solid var(--border);padding-top:20px}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-12px) rotate(1.5deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgb(255 66 57/.55)}60%{box-shadow:0 0 0 12px rgb(255 66 57/0)}}
+@media (prefers-reduced-motion:no-preference){
+ .hero-img img{animation:floaty 5s ease-in-out infinite}.spark{animation:twinkle 2.6s ease-in-out infinite}.spark.s2{animation-delay:.8s}.spark.s3{animation-delay:1.5s}
+ .update{animation:rise .6s both .1s,pulse 3s 1s 3}.hero{animation:rise .6s both}.card{animation:rise .6s both .2s}.card+.card{animation-delay:.32s}.perks li{animation:rise .6s both .4s}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:720px){.hero{grid-template-columns:1fr;padding:24px 20px}.hero-img{order:-1}.hero-img img{max-width:170px}.update{grid-template-columns:auto 1fr}.update .pill{grid-column:1/-1;justify-self:start}.topbar nav a{padding:8px 10px}.first{padding:20px 16px}}
+.prep{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin:44px 0 0;padding:24px 28px;border-radius:24px;background:var(--card);border:1px solid var(--border);box-shadow:var(--elev-card)}.prep img{width:96px;height:96px}.prep h2{margin:0 0 8px;font-family:var(--font-display);font-size:1.4rem}.prep ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 20px}.prep li{padding-left:22px;position:relative}.prep li::before{content:'';position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--primary)}.prep li small{color:var(--muted-foreground)}@media(max-width:720px){.prep{grid-template-columns:1fr}}
+.tabs[hidden]{display:none}
+button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}button.btn.off:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+.topbar nav a{display:inline-flex;align-items:center;min-height:44px}
+.jump a{display:inline-block;padding:11px 2px;min-height:44px;box-sizing:border-box}
+.grid{align-items:start}.card .btns{margin-top:12px}
+[data-copy]{min-height:44px;min-width:44px}
+</style></head><body><a class="skip" href="#downloads">Ir para os downloads</a><main>
+<div class="topbar"><span class="logo" aria-label="ControlFree">Control<b>Free</b></span><nav aria-label="Principal"><a href="#downloads">Downloads</a><a href="#primeira-abertura">Primeira abertura</a></nav></div>
+<header class="hero"><div><h1>Apps <em>Frans</em>,<br>prontos pra rodar.</h1><p>Instale no seu computador. Sem servidor, sem túnel. O Frans Orquestrador está em evolução, com novidades a caminho.</p>
+ <div class="cta"><a class="btn primary big" href="#downloads">Baixar o Orquestrador</a><a class="btn ghost big" href="#primeira-abertura">Primeira abertura</a></div></div>
+ <div class="hero-img"><span class="spark s1" aria-hidden="true"></span><span class="spark s2" aria-hidden="true"></span><span class="spark s3" aria-hidden="true"></span><img src="wave.png" width="260" height="260" alt="Frans, o mascote dragão, acenando"></div></header>
+<aside class="update" aria-labelledby="up-t"><img src="present.png" width="72" height="72" alt="Frans apresentando uma novidade">
+ <div><h2 id="up-t">Atualização de segurança e acessibilidade a caminho</h2><p>Uma nova versão do Frans Orquestrador está chegando. Enquanto isso, os downloads abaixo continuam disponíveis.</p></div><span class="pill">Novidade</span></aside>
+<!-- ATUALIZAÇÃO DE VERSÃO: quando a nova versão sair, trocar este banner (título e selo) e liberar o link da release. -->
+<h2 class="section-title" id="downloads">Escolha seu app</h2><p class="section-sub">Baixe para o seu sistema.</p>
 <div class="grid">
- <section class="card dev" data-dev="1" aria-labelledby="ed-t"><h2 id="ed-t">Frans Editor</h2><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p>
+ <section class="card dev" data-dev="1" aria-labelledby="ed-t"><div class="card-head"><img src="thinking.png" width="64" height="64" alt=""><h2 id="ed-t">Frans Editor</h2></div><p>Editor de vídeo com timeline, legendas automáticas e exportação em MP4.</p>
   <div class="devbadge"><img src="present.png" width="48" height="48" alt=""><div><span class="badge">Em desenvolvimento</span><p>Estamos evoluindo bastante o Editor. Em breve ele volta para download.</p></div></div>
-  <div class="btns"><span class="btn off" aria-disabled="true" role="link">Mac com chip Apple (M1, M2…)<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Mac Intel<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Windows<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Ubuntu/Debian<small>Em desenvolvimento</small></span><span class="btn off" aria-disabled="true" role="link">Linux (AppImage)<small>Em desenvolvimento</small></span></div></section>
- <section class="card" data-repo="frans-orquestrador"><h2>Frans Orquestrador</h2><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">mais recente</b></span>
-  <div class="btns"><a class="btn primary mac" href="#">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="#">Mac Intel</a><a class="btn win" href="#">Windows</a><a class="btn deb" href="#">Ubuntu/Debian</a><a class="btn lin" href="#">Linux (AppImage)</a></div></section>
+  <div class="btns"><button type="button" class="btn off" aria-disabled="true">Mac com chip Apple (M1, M2…)<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Mac Intel<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Windows<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Ubuntu/Debian<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Linux (AppImage)<small>Em desenvolvimento</small></button></div></section>
+ <section class="card" data-repo="frans-orquestrador" aria-labelledby="or-t"><div class="card-head"><img src="celebrate.png" width="64" height="64" alt=""><h2 id="or-t">Frans Orquestrador</h2></div><div class="chips"><span class="chip hot">Atualização a caminho</span></div><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">0.4.3</b></span>
+  <div class="btns"><a class="btn primary mac" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.3/frans-orquestrador-0.4.3-mac-arm64.dmg">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.3/frans-orquestrador-0.4.3-mac-x64.dmg">Mac Intel</a><a class="btn win" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.3/frans-orquestrador-0.4.3-win-x64.exe">Windows</a><a class="btn deb" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.3/frans-orquestrador-0.4.3-linux-amd64.deb">Ubuntu/Debian</a><a class="btn lin" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.3/frans-orquestrador-0.4.3-linux-x86_64.AppImage">Linux (AppImage)</a></div></section>
 </div>
+<section class="prep" aria-labelledby="prep-t"><img src="present.png" width="96" height="96" alt="Frans apresentando as novidades"><div><h2 id="prep-t">Em preparação no Orquestrador</h2><ul><li>Mais segurança nas janelas e nas notas <small>(a caminho)</small></li><li>Mais cuidado com chaves e arquivos do app <small>(a caminho)</small></li><li>Navegação por teclado e foco visível melhorados <small>(a caminho)</small></li><li>Correções de segurança e acessibilidade <small>(a caminho)</small></li></ul></div></section>
+<ul class="perks" aria-label="Vantagens"><li><span class="ico" aria-hidden="true">1</span><b>Instala em um passo</b><span>Baixe, abra e pronto. Sem servidor, sem túnel.</span></li><li><span class="ico" aria-hidden="true">2</span><b>Versão estável</b><span>Os downloads apontam para a versão estável atual.</span></li><li><span class="ico" aria-hidden="true">3</span><b>Frans te guia</b><span>Passo a passo ilustrado para a primeira abertura em cada sistema.</span></li></ul>
 <p class="jump">Primeira vez abrindo? <a href="#primeira-abertura">Veja o passo a passo da primeira abertura</a>.</p>
 <section class="first" id="primeira-abertura" aria-labelledby="pa-titulo">
- <div class="first-head"><img src="present.png" width="96" height="96" alt="Frans apresentando"><div><h2 id="pa-titulo">Primeira abertura</h2><p>O app Frans ainda não tem assinatura paga, por isso o sistema pergunta uma vez antes de abrir. Depois dessa primeira vez, ele não pergunta de novo. Escolha o seu sistema:</p></div></div>
- <div class="tabs" role="tablist" aria-label="Sistema operacional">
+ <div class="first-head"><img src="present.png" width="96" height="96" alt="Frans apresentando"><div><h2 id="pa-titulo">Primeira abertura</h2><p>O app Frans ainda não tem assinatura paga, por isso o sistema pergunta uma vez antes de abrir. Depois dessa primeira vez, normalmente não pergunta de novo. Escolha o seu sistema:</p></div></div>
+ <div class="tabs" hidden role="tablist" aria-label="Sistema operacional">
   <button role="tab" id="tab-win" aria-controls="p-win" aria-selected="true" type="button">Windows</button>
   <button role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="false" tabindex="-1" type="button">Mac</button>
   <button role="tab" id="tab-lin" aria-controls="p-lin" aria-selected="false" tabindex="-1" type="button">Linux</button></div>
@@ -54,13 +117,13 @@ footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
   <ol><li>Abra o <b>.exe</b> baixado. Se aparecer “O Windows protegeu seu computador”, clique em <b>Mais informações</b>.</li><li>Depois clique em <b>Executar assim mesmo</b>.</li></ol>
   <h4>Se a tela não aparecer e o Windows só bloquear a abertura</h4>
   <ol><li>Clique com o botão direito no <b>.exe</b> baixado e escolha <b>Propriedades</b>.</li><li>Marque <b>Desbloquear</b> e clique em <b>OK</b>.</li><li>Abra o app de novo.</li></ol>
-  <p class="note">O Windows só pergunta na primeira abertura.</p></div>
- <div class="os" id="p-mac" role="tabpanel" aria-labelledby="tab-mac" tabindex="0" hidden><h3>Mac</h3><p class="lead">Vale para o Frans Orquestrador.</p>
+  <p class="note">Normalmente o Windows só pergunta na primeira abertura.</p></div>
+ <div class="os" id="p-mac" role="tabpanel" aria-labelledby="tab-mac" tabindex="0"><h3>Mac</h3><p class="lead">Vale para o Frans Orquestrador.</p>
   <ol><li>Abra o <b>.dmg</b> e arraste o app para Aplicativos.</li><li>Abra o app uma vez. O Mac vai pedir confirmação.</li><li>Vá em <b>Ajustes do Sistema › Privacidade e Segurança</b> e clique em <b>Abrir Mesmo Assim</b>.</li></ol>
   <h4>Alternativa pelo Terminal</h4>
   <p>Só se o caminho acima não funcionar. Este comando serve apenas para o app do Frans; não use em outros apps. As aspas são necessárias por causa do espaço no nome.</p>
   <div class="cmd"><pre>xattr -dr com.apple.quarantine "/Applications/Frans Orquestrador.app"</pre><button type="button" data-copy>Copiar</button></div></div>
- <div class="os" id="p-lin" role="tabpanel" aria-labelledby="tab-lin" tabindex="0" hidden><h3>Linux</h3><p class="lead">O <b>.deb</b> é a opção principal, no Ubuntu e no Debian.</p>
+ <div class="os" id="p-lin" role="tabpanel" aria-labelledby="tab-lin" tabindex="0"><h3>Linux</h3><p class="lead">O <b>.deb</b> é a opção principal, no Ubuntu e no Debian.</p>
   <div class="cmd"><pre>sudo apt install ./frans-*.deb</pre><button type="button" data-copy>Copiar</button></div>
   <p>O .deb já cuida do sandbox sozinho, sem ajuste extra.</p>
   <h4>AppImage</h4>
@@ -75,28 +138,12 @@ footer{margin-top:40px;color:var(--muted-foreground);font-size:.85rem}
   <div class="cmd"><pre>./frans-*.AppImage</pre><button type="button" data-copy>Copiar</button></div></div>
  <div class="sr" role="status" aria-live="polite" id="copy-status"></div>
 </section>
-<footer>ControlFree · O Orquestrador se atualiza sozinho a partir da 0.4.2 do Orquestrador. Quem tem uma versão anterior instala a nova à mão uma vez.</footer>
+<footer role="contentinfo">ControlFree · Os downloads do Orquestrador apontam para a versão estável atual.</footer>
 </main>
-<script>
-// Configure o repositório público de releases aqui
-const OWNER='Pcamargoz', RELEASES='frans-releases', LISTA=`https://github.com/${OWNER}/${RELEASES}/releases`;
-document.querySelectorAll('.card[data-repo] a').forEach(a=>a.href=LISTA);
-const get=r=>{const k='rel:v3:'+r,c=JSON.parse(sessionStorage.getItem(k)||'null');if(c&&Date.now()-c.t<6e5)return Promise.resolve(c.d);
- return fetch(`https://api.github.com/repos/${OWNER}/${r}/releases`).then(x=>x.ok?x.json():null).then(d=>{if(Array.isArray(d)){sessionStorage.setItem(k,JSON.stringify({t:Date.now(),d}));return d}return []}).catch(()=>[])};
-Promise.all(['frans-orquestrador-releases',RELEASES].map(get)).then(l=>{const rels=l.flat();
- document.querySelectorAll('.card[data-repo]').forEach(c=>{
-  const app=c.dataset.repo, rel=(Array.isArray(rels)?rels:[]).find(r=>r.assets.some(a=>a.name.toLowerCase().includes(app.replace('frans-','').toLowerCase())));
-  if(!rel) return; c.querySelector('.v').textContent=rel.tag_name;
-  const k=app.replace('frans-','').toLowerCase(), f=(ext,t)=>rel.assets.find(a=>{const n=a.name.toLowerCase();return n.includes(k)&&n.endsWith(ext)&&(!t||n.includes(t))});
-  const mac=f('.dmg','arm64'), macx=f('.dmg','x64'), win=f('.exe');
-  const off=(b,t)=>{b.removeAttribute('href');b.setAttribute('aria-disabled','true');b.style.opacity='.55';b.textContent+=' (em breve)'};
-  mac?c.querySelector('.mac').href=mac.browser_download_url:off(c.querySelector('.mac')); if(!win) off(c.querySelector('.win')); const deb=f('-amd64.deb'); deb?c.querySelector('.deb').href=deb.browser_download_url:off(c.querySelector('.deb')); const lin=f('.appimage'); lin?c.querySelector('.lin').href=lin.browser_download_url:off(c.querySelector('.lin')); if(macx) c.querySelector('.macx').href=macx.browser_download_url; if(win) c.querySelector('.win').href=win.browser_download_url;
- });
-}).catch(()=>{});
-</script><script>
-(function(){const tabs=[...document.querySelectorAll('.first [role=tab]')];
+<!-- LINKS FIXOS NA v0.4.3 (tag explícita, sem consultar "latest"). A troca para outra versão é MANUAL: só depois da verificação da QA (sha512 e latest*.yml). --><script>
+(function(){const tabs=[...document.querySelectorAll('.first [role=tab]')];document.querySelector('.tabs').hidden=false;
  const sel=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
- tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault()}})});
+ sel(tabs[0]);tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault()}})});
  const st=document.getElementById('copy-status');
  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
   const txt=b.parentNode.querySelector('pre').textContent;
