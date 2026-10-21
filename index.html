@@ -146,15 +146,6 @@ button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}butt
 }
 </style></head><body><a class="skip" href="#downloads">Ir para os downloads</a><main>
 <div class="topbar"><span class="logo" aria-label="ControlFree">Control<b>Free</b></span><nav aria-label="Principal"><a href="#downloads">Downloads</a><a href="#novidades">Novidades</a><a href="#primeira-abertura">Primeira abertura</a></nav></div>
-<!-- LANÇAMENTO: destaque do Frans WhatsApp no topo -->
-<section class="launch" id="lancamento" aria-labelledby="ln-k ln-t"><div class="launch-txt">
- <p class="launch-kicker" id="ln-k"><span class="badge-novo">Novo</span><span>Lançamento</span></p>
- <p class="launch-title" id="ln-t">Frans WhatsApp</p>
- <dl class="launch-meta"><div><dt>Versão</dt><dd>Prévia 0.1.0-previa.3</dd></div>
-  <div><dt>Lançamento</dt><dd><time datetime="2026-10-21">21 de outubro de 2026</time></dd></div></dl>
- <p>App de WhatsApp para atendimento em equipe. Nova prévia 0.1.0-previa.3: o login tenta de novo sozinho quando o servidor demora, a caixa mostra se está ao vivo e o Mac avisa quando sai versão nova.</p>
- <div class="cta"><a class="btn primary big" href="#whatsapp">Conhecer o Frans WhatsApp</a></div></div>
- <div class="launch-img" aria-hidden="true"><span class="spark l1"></span><span class="spark l2"></span><img src="celebrate.png" width="171" height="178" alt=""></div></section>
 <header class="hero"><div><h1>Apps <em>Frans</em>,<br>prontos pra rodar.</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p>
  <div class="cta"><a class="btn primary big" href="#downloads">Baixar o Orquestrador</a><a class="btn ghost big" href="#primeira-abertura">Primeira abertura</a></div></div>
  <div class="hero-img"><span class="spark s1" aria-hidden="true"></span><span class="spark s2" aria-hidden="true"></span><span class="spark s3" aria-hidden="true"></span><img src="wave.png" width="260" height="260" alt="Frans, o mascote dragão, acenando"></div></header>
@@ -167,59 +158,19 @@ button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}butt
  <section class="card" data-repo="frans-orquestrador" aria-labelledby="or-t"><div class="card-head"><img src="celebrate.png" width="64" height="64" alt=""><h2 id="or-t">Frans Orquestrador</h2></div><div class="chips"><span class="chip hot">Nova versão 0.4.4</span></div><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">0.4.4</b></span>
   <div class="btns"><a class="btn primary mac" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-mac-arm64.dmg">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-mac-x64.dmg">Mac Intel</a><a class="btn win" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-win-x64.exe">Windows</a><a class="btn deb" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-linux-amd64.deb">Ubuntu/Debian</a><a class="btn lin" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-linux-x86_64.AppImage">Linux (AppImage)</a></div><p class="dl-note">Instalador sem assinatura de código: <a href="#uns-t">veja o aviso e o que fazer na primeira abertura</a>.</p></section>
  <section class="card dev wa" data-dev="1" id="whatsapp" tabindex="-1" aria-labelledby="wa-t"><div class="card-head"><img src="curious.png" width="64" height="64" alt=""><h2 id="wa-t">Frans WhatsApp</h2></div>
-  <div class="devbadge"><div><span class="badge-novo">Novo</span> <span class="badge">Prévia 0.1.0-previa.3</span></div></div>
+  <div class="devbadge"><img src="present.png" width="48" height="48" alt=""><div><span class="badge">Em desenvolvimento</span><p>Estamos preparando uma versão nova do Frans WhatsApp, com equipe, atribuição de atendimento e nomes dos contatos. Em breve ele volta para download.</p></div></div>
   <p>App de WhatsApp para atendimento em equipe. O administrador conecta o número por QR code e a equipe atende pela mesma caixa de entrada.</p>
-  <p class="wa-limite" id="wa-limite"><b>O que tem nesta prévia:</b> login, conexão do WhatsApp por QR code (só administrador), caixa de entrada que se atualiza em tempo real e conversas só de texto. Contatos, respostas rápidas e mídia (imagens, áudios e arquivos) ficam para a próxima prévia.</p>
-  <div class="wa-limite" id="wa-novo"><p><b>Novo nesta prévia:</b></p><ul>
-   <li>Se o servidor não responde no login, o app tenta de novo sozinho e mostra quantos segundos faltam.</li>
-   <li>Depois de muitas tentativas de login, um aviso claro diz quanto tempo esperar antes de tentar de novo.</li>
-   <li>A caixa de entrada mostra se está <b>Ao vivo</b>, <b>Conectando…</b> ou com a <b>Lista indisponível</b>.</li>
-   <li>Se uma mensagem não foi enviada e a conversa ficou indisponível, o botão <b>Tentar de novo</b> fica bloqueado e explica que volta quando a conversa voltar.</li>
-   <li>No Mac, o app avisa quando sai uma versão nova e indica esta página para baixar.</li></ul></div>
-  <div class="wa-tabs" role="tablist" aria-label="Sistema do instalador do Frans WhatsApp">
-   <button type="button" role="tab" id="wa-tab-win" aria-controls="wa-p-win" aria-selected="true">Windows</button>
-   <button type="button" role="tab" id="wa-tab-mac" aria-controls="wa-p-mac" aria-selected="false" tabindex="-1">macOS</button></div>
-  <div class="wa-panel" id="wa-p-win" role="tabpanel" aria-labelledby="wa-tab-win" tabindex="0"><div class="wa-warn"><p><b>Sem assinatura de código.</b> Por isso o SmartScreen do Windows mostra um aviso na primeira abertura. Isso é esperado.</p><ul>
-   <li>Na tela “Windows protegeu seu PC”, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</li>
-   <li>Baixe sempre desta página e não de outro lugar.</li></ul></div>
-   <div class="wa-file" id="wa-f-exe">
-    <h3 class="wa-file-t">Windows · instalador (.exe)</h3>
-    <dl class="wa-meta"><div><dt>Arquivo</dt><dd><code>Frans-WhatsApp-Setup-0.1.0-previa.3.exe</code></dd></div>
-     <div><dt>Tamanho</dt><dd>107,6 MB <span class="wa-bytes">(112.879.117 bytes)</span></dd></div>
-     <div><dt>sha512</dt><dd><code>955223c7517ef8c782bc154821bc6512734a257f3252abed3c9701e2d0eaf92a845764a599fbcac70aa0155b79100718f9ce4264e5dc470a1c5e219bfbc0bdd6</code></dd></div></dl>
-    <a class="btn primary" href="https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.3/Frans-WhatsApp-Setup-0.1.0-previa.3.exe" download>Baixar instalador (.exe)</a>
-   </div></div>
-  <div class="wa-panel" id="wa-p-mac" role="tabpanel" aria-labelledby="wa-tab-mac" tabindex="0"><p class="wa-mac-nt"><b>Não testado em Mac.</b> Feito para Mac com processador Intel. Se o macOS bloquear, clique com o botão direito no app e escolha <b>Abrir</b>, ou rode <code>xattr -cr &quot;/Applications/Frans WhatsApp.app&quot;</code> no Terminal.</p>
-   <div class="wa-warn"><p><b>Atenção, Mac: leia antes de baixar.</b></p><ul>
-   <li><b>Só Intel (x64).</b> Não há versão nativa para chip Apple (M1, M2…). Nesses Macs o app roda pelo Rosetta 2; se o Rosetta não estiver instalado, o macOS oferece instalar na primeira abertura.</li>
-   <li><b>Sem assinatura e sem notarização da Apple.</b> Não há conta Apple Developer, então o Gatekeeper pergunta antes de abrir. Isso é esperado.</li>
-   <li><b>Como seguir:</b> descompacte o .zip e arraste o <b>Frans WhatsApp</b> para Aplicativos.</li>
-   <li><b>No macOS 15 ou mais novo:</b> abra o app uma vez, vá em <b>Ajustes do Sistema › Privacidade e Segurança</b>, role até a mensagem sobre o Frans WhatsApp e clique em <b>Abrir mesmo assim</b>.</li>
-   <li><b>No macOS 14 ou anterior:</b> clique com o botão direito no app (ou Control + clique) e escolha <b>Abrir</b>.</li>
-   <li><b>Se aparecer “o app está danificado”:</b> abra o Terminal e rode <code>xattr -cr &quot;/Applications/Frans WhatsApp.app&quot;</code>. Depois abra o app de novo.</li>
-   <li><b>Atualização:</b> no Mac, o app avisa quando sai uma versão nova e indica esta página. Baixe o .zip novo aqui e troque o app em Aplicativos.</li></ul></div>
-   <div class="wa-file" id="wa-f-mac">
-    <h3 class="wa-file-t">macOS · Intel x64 (.zip)</h3>
-    <dl class="wa-meta"><div><dt>Arquivo</dt><dd><code>Frans-WhatsApp-0.1.0-previa.3-mac.zip</code></dd></div>
-     <div><dt>Tamanho</dt><dd>126,6 MB <span class="wa-bytes">(132.720.848 bytes)</span></dd></div>
-     <div><dt>sha512</dt><dd><code>5e6a83893f67047360d00e6c89fff4a45affcdb8dde8bf0089a6fb883fc83a3cc796ebc1eb4eea528eb650fdc058270aa5c96f96cade00cb0d329537675b3b57</code></dd></div></dl>
-    <a class="btn primary" href="https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.3/Frans-WhatsApp-0.1.0-previa.3-mac.zip" download>Baixar Intel x64 (.zip)</a>
-   </div></div>
-  <p class="wa-risk"><b>Aviso:</b> Este app usa uma conexão não oficial com o WhatsApp. O uso intenso pode levar ao bloqueio do número; recomendamos começar com poucas mensagens.</p>
-  <dl class="wa-meta"><div><dt>Versão</dt><dd>0.1.0-previa.3</dd></div></dl>
-  <p class="wa-note">Tamanhos em MB de 1.048.576 bytes (1024 × 1024), com o valor exato em bytes ao lado. O sha512 protege contra corrupção do arquivo, não contra comprometimento do repositório. Baixe sempre desta página.</p></section>
+  <div class="btns"><button type="button" class="btn off" aria-disabled="true">Windows<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Mac Intel<small>Em desenvolvimento</small></button></div>
+  </section>
 </div>
 <section class="news" id="novidades" aria-labelledby="nv-t"><h2 id="nv-t" class="section-title">Novidades</h2><p class="section-sub">O que mudou nos apps desta página.</p>
 <ol class="news-list">
- <li><p class="news-tag"><span class="badge-novo">Novo</span></p><div><h3>Frans WhatsApp · prévia 0.1.0-previa.3</h3><p>O login tenta de novo sozinho quando o servidor não responde, com a contagem na tela, e avisa com clareza quando houve tentativas demais. A caixa mostra se está ao vivo, conectando ou com a lista indisponível, e o "Tentar de novo" de uma mensagem fica bloqueado enquanto a conversa está indisponível. No Mac, o app agora avisa quando sai versão nova. Instalador (.exe) para Windows e .zip para Mac Intel (x64), ainda não testado em Mac.</p><p class="news-links"><a href="#whatsapp">Ver o Frans WhatsApp</a></p></div></li>
- <li><p class="news-tag"><span class="tag-up">Atualização</span></p><div><h3>Frans WhatsApp · prévia 0.1.0-previa.2</h3><p>Conexão do WhatsApp por QR code, caixa de entrada em tempo real e conversas de texto.</p></div></li>
+ <li><p class="news-tag"><span class="tag-dev">Em desenvolvimento</span></p><div><h3>Frans WhatsApp</h3><p>Estamos preparando uma versão nova, com equipe, atribuição de atendimento e nomes dos contatos. Em breve ele volta para download.</p><p class="news-links"><a href="#whatsapp">Ver o Frans WhatsApp</a></p></div></li>
  <li><p class="news-tag"><span class="tag-up">Atualização</span></p><div><h3>Frans Orquestrador 0.4.4</h3><p>Atualização de segurança e acessibilidade, com downloads para Mac (chip Apple e Intel), Windows, Ubuntu/Debian e Linux (AppImage). O instalador não tem assinatura de código.</p><p class="news-links"><a href="#uns-t">Veja o aviso</a><a href="#over-t">Como instalar por cima</a></p></div></li>
  <li><p class="news-tag"><span class="tag-dev">Em desenvolvimento</span></p><div><h3>Frans Editor</h3><p>Estamos evoluindo bastante o Editor. Em breve ele volta para download.</p></div></li>
 </ol></section>
 <section class="unsigned" aria-labelledby="uns-t"><h2 id="uns-t" tabindex="-1">Instalador sem assinatura de código nesta versão</h2>
 <p>O instalador da 0.4.4 não tem assinatura de código. Por isso o seu sistema vai mostrar um aviso na primeira abertura. Isso é esperado.</p>
-<p>A prévia do Frans WhatsApp (0.1.0-previa.3) também não tem assinatura: no Windows, o SmartScreen pode avisar na primeira abertura, e no Mac o Gatekeeper bloqueia a primeira abertura.</p>
-<p class="uns-wa"><a href="#whatsapp">Veja como seguir no card do Frans WhatsApp</a></p>
 <p><b>A atualização automática ainda não verifica quem assinou o instalador.</b> Baixe sempre desta página e não de outro lugar.</p>
 <div class="uns-grid"><div><h3>Windows</h3><p>Na tela “Windows protegeu seu PC”, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</p></div>
 <div><h3>Mac</h3><p>Não há conta Apple Developer, então o Gatekeeper pergunta antes de abrir. No macOS 15 ou mais novo, abra o app uma vez, vá em <b>Ajustes do Sistema › Privacidade e Segurança</b>, role até a mensagem sobre o Frans e clique em <b>Abrir mesmo assim</b>. Em macOS mais antigo, também funciona clicar com o botão direito no app e escolher <b>Abrir</b>.</p></div>
