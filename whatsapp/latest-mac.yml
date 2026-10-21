@@ -1,8 +1,8 @@
-version: 0.1.0-previa.2
+version: 0.1.0-previa.3
 files:
-  - url: https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.2/Frans-WhatsApp-0.1.0-previa.2-mac.zip
-    sha512: gKIepqxUhQvkF0XwK5issQCjeuP418ScjKnszjmdy+OThHD9MUuzqF9YWchVSSYh7rbM6MPS+yFTCfPtxRo2mg==
-    size: 132710411
-path: https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.2/Frans-WhatsApp-0.1.0-previa.2-mac.zip
-sha512: gKIepqxUhQvkF0XwK5issQCjeuP418ScjKnszjmdy+OThHD9MUuzqF9YWchVSSYh7rbM6MPS+yFTCfPtxRo2mg==
-releaseDate: "2026-10-21T05:16:17.756Z"
+  - url: https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.3/Frans-WhatsApp-0.1.0-previa.3-mac.zip
+    sha512: XmqDiT9nBHNg0A5sif/0pFr/zbjd6L8Aiab7iD/IOjzHluvB607qUo62UP3AWCcKpclvlsreAMsNMpU3Z1s7Vw==
+    size: 132720848
+path: https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.3/Frans-WhatsApp-0.1.0-previa.3-mac.zip
+sha512: XmqDiT9nBHNg0A5sif/0pFr/zbjd6L8Aiab7iD/IOjzHluvB607qUo62UP3AWCcKpclvlsreAMsNMpU3Z1s7Vw==
+releaseDate: "2026-10-21T06:53:49.817Z"
