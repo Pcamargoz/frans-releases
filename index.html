@@ -49,10 +49,6 @@ main{max-width:1040px;padding-top:24px}
 .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .hero-img{position:relative;justify-self:center}.hero-img img{display:block;width:100%;max-width:260px;height:auto;filter:drop-shadow(0 18px 24px rgb(0 0 0/.45))}
 .spark{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--primary)}.spark.s1{top:10%;left:2%}.spark.s2{bottom:18%;right:0;background:var(--brand-cream);width:9px;height:9px}.spark.s3{top:4%;right:12%;width:7px;height:7px;background:var(--brand-cream-3)}
-.update{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin:0 0 36px;padding:18px 24px;border-radius:20px;background:var(--primary-edge);color:#fff;border:2px solid var(--primary);box-shadow:var(--elev-relevo)}
-.update img{width:72px;height:72px}.update h2{margin:0;font-size:1.25rem;font-family:var(--font-display)}.update p{margin:4px 0 0;color:#fff}
-.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-weight:800;font-size:.85rem;background:#fff;color:var(--primary-edge);letter-spacing:.03em;text-transform:uppercase}
-.update a{color:#fff;font-weight:700}
 .section-title{font-family:var(--font-display);font-size:1.7rem;margin:0 0 6px}.section-sub{margin:0 0 20px;color:var(--muted-foreground)}
 .card{position:relative;border-radius:24px;padding:28px;box-shadow:var(--elev-card);transition:transform .25s ease,box-shadow .25s ease;overflow:hidden}
 .card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,var(--primary),var(--brand-cream))}
@@ -74,13 +70,12 @@ footer{border-top:1px solid var(--border);padding-top:20px}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-12px) rotate(1.5deg)}}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgb(255 66 57/.55)}60%{box-shadow:0 0 0 12px rgb(255 66 57/0)}}
 @media (prefers-reduced-motion:no-preference){
  .hero-img img{animation:floaty 5s ease-in-out infinite}.spark{animation:twinkle 2.6s ease-in-out infinite}.spark.s2{animation-delay:.8s}.spark.s3{animation-delay:1.5s}
- .update{animation:rise .6s both .1s,pulse 3s 1s 3}.hero{animation:rise .6s both}.card{animation:rise .6s both .2s}.card+.card{animation-delay:.32s}.perks li{animation:rise .6s both .4s}
+ .hero{animation:rise .6s both}.card{animation:rise .6s both .2s}.card+.card{animation-delay:.32s}.perks li{animation:rise .6s both .4s}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media (max-width:720px){.hero{grid-template-columns:1fr;padding:24px 20px}.hero-img{order:-1}.hero-img img{max-width:170px}.update{grid-template-columns:auto 1fr}.update .pill{grid-column:1/-1;justify-self:start}.topbar nav a{padding:8px 10px}.first{padding:20px 16px}}
+@media (max-width:720px){.hero{grid-template-columns:1fr;padding:24px 20px}.hero-img{order:-1}.hero-img img{max-width:170px}.topbar nav a{padding:8px 10px}.first{padding:20px 16px}}
 .prep{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin:44px 0 0;padding:24px 28px;border-radius:24px;background:var(--card);border:1px solid var(--border);box-shadow:var(--elev-card)}.prep img{width:96px;height:96px}.prep h2{margin:0 0 8px;font-family:var(--font-display);font-size:1.4rem}.prep ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 20px}.prep li{padding-left:22px;position:relative}.prep li::before{content:'';position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--primary)}.prep li small{color:var(--muted-foreground)}@media(max-width:720px){.prep{grid-template-columns:1fr}}
 .tabs[hidden]{display:none}
 button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}button.btn.off:focus-visible{outline:3px solid var(--ring);outline-offset:3px}
@@ -90,13 +85,78 @@ button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}butt
 [data-copy]{min-height:44px;min-width:44px}
 .dl-note{font-size:.95rem;color:var(--foreground)!important}.dl-note a{display:inline-flex;align-items:center;min-height:44px;color:var(--foreground);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .unsigned,.over{margin:32px 0 0;padding:24px 28px;border-radius:24px;background:var(--card);border:1px solid var(--border);box-shadow:var(--elev-card)}.unsigned{border-left:8px solid #FF4239;scroll-margin-top:16px}#uns-t{scroll-margin-top:16px}.unsigned h2,.over h2{margin:0 0 8px;font-family:var(--font-display);font-size:1.4rem}.unsigned h3{margin:0 0 4px;font-size:1.05rem}.unsigned p{margin:0 0 8px}.unsigned code{padding:2px 6px;border-radius:6px;background:var(--muted);font-size:.9em}.uns-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 24px;margin-top:12px}.over ol{margin:0;padding-left:1.4em;display:grid;gap:6px}.unsigned a{color:var(--foreground);font-weight:600;text-decoration:underline;display:inline-block;padding:11px 2px;min-height:44px;box-sizing:border-box}
+/* ===== Card Frans WhatsApp ===== */
+.wa-tabs{display:flex;gap:8px;flex-wrap:wrap}.wa-tabs button{font:inherit;font-weight:600;cursor:pointer;min-height:44px;min-width:44px;padding:10px 18px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--foreground)}
+.wa-tabs button[aria-selected=true]{background:var(--primary-edge);color:#fff;border-color:transparent}
+.wa-panel{display:flex;flex-direction:column;gap:12px}.wa-panel[hidden]{display:none}
+.wa-panel:focus-visible,.wa-tabs button:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+.wa .btn.off{min-height:44px;background:var(--muted);color:var(--foreground);border:2px dashed var(--input)}.wa .btn.off small{color:var(--foreground);font-weight:600}.wa-warn{border-left:4px solid var(--primary);padding:4px 0 4px 12px;color:var(--foreground)!important}
+.wa-risk{font-size:.9rem;border-left:4px solid var(--input);padding:4px 0 4px 12px}.wa-bloq,.wa-note{font-size:.9rem}.wa-note{color:var(--foreground)!important}
+.wa-meta{display:grid;gap:8px;margin:0}.wa-meta div{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}.wa-meta dt{font-weight:700;min-width:64px}.wa-meta dd{margin:0;min-width:0}
+.wa-meta code{overflow-wrap:anywhere}
+.wa .wa-limite{font-size:.95rem;color:var(--foreground);background:var(--background);border:1px solid var(--border);border-radius:12px;padding:10px 14px}
+.wa-file{display:grid;gap:8px;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--background)}.wa-file-t{margin:0;font-size:1rem}.wa-bytes{color:var(--muted-foreground);font-size:.85rem}.wa-meta dd code{font-family:var(--font-mono,ui-monospace,monospace)}
+.wa .wa-warn p{margin:0;color:var(--foreground)}.wa-warn ul{margin:6px 0 0;padding-left:20px;display:grid;gap:6px}#wa-bloq,.wa-note a{color:var(--foreground)}.ph{border:1px dashed var(--border);border-radius:8px;padding:2px 8px;color:var(--muted-foreground)}
+/* ===== Lançamento 2026-10: Frans WhatsApp ===== */
+.launch{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;margin:8px 0 24px;padding:28px 36px;border-radius:28px;background:var(--card);border:2px solid var(--primary);box-shadow:var(--elev-pop);overflow:hidden;scroll-margin-top:16px}
+.launch::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--primary),var(--brand-cream),var(--primary));pointer-events:none}
+.launch::after{content:"";position:absolute;right:-120px;bottom:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgb(255 66 57/.22),transparent 65%);pointer-events:none}
+.launch-txt{position:relative;z-index:1;min-width:0}
+.launch-kicker{display:flex;align-items:center;gap:10px;margin:0;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;color:var(--foreground)}
+.launch .launch-title{font-weight:800;font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-.02em;margin:10px 0 0}
+.launch p{margin:12px 0 0;max-width:56ch;color:var(--foreground)}
+.launch-meta{display:flex;flex-wrap:wrap;gap:8px 12px;margin:14px 0 0}.launch-meta div{display:flex;gap:8px;align-items:baseline;padding:6px 14px;border-radius:999px;background:var(--muted);border:1px solid var(--border)}
+.launch-meta dt{font-weight:700;font-size:.85rem;color:var(--muted-foreground)}.launch-meta dd{margin:0;font-weight:700}
+.launch-meta .ph{color:var(--foreground)}
+.launch-img{position:relative;z-index:1;justify-self:center}.launch-img img{display:block;width:150px;height:auto;filter:drop-shadow(0 14px 20px rgb(0 0 0/.35))}
+.spark.l1{top:2%;left:-6%}.spark.l2{bottom:10%;right:-4%;width:9px;height:9px;background:var(--brand-cream)}
+.badge-novo{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:var(--primary);color:var(--primary-foreground);border:2px solid var(--primary)}
+#whatsapp{border:2px solid var(--primary);box-shadow:var(--elev-pop);scroll-margin-top:16px}
+#whatsapp::before{height:6px;background:linear-gradient(90deg,var(--primary),var(--brand-cream),var(--primary))}
+#whatsapp .devbadge div{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.news{margin:44px 0 0;padding:28px;border-radius:28px;background:var(--card);border:1px solid var(--border);box-shadow:var(--elev-card);scroll-margin-top:16px}
+.news-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.news-list li{position:relative;display:grid;grid-template-columns:210px 1fr;gap:8px 20px;padding:16px 0;border-top:1px solid var(--border)}.news-list li:first-child{border-top:0;padding-top:4px}
+.news-tag{margin:0}.news-list h3{margin:0 0 4px;font-family:var(--font-display);font-size:1.15rem}.news-list p{margin:0;color:var(--foreground)}
+.news-links{display:flex;flex-wrap:wrap;gap:0 20px;margin-top:2px!important}.news-list a{color:var(--foreground);font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;padding:0 2px;min-height:44px;box-sizing:border-box}
+.tag-up,.tag-dev,.badge-novo{white-space:nowrap}.launch-meta dd{white-space:nowrap}
+.tag-up,.tag-dev{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+.tag-up{background:var(--accent);color:var(--accent-foreground);border:2px solid var(--brand-cream-3)}
+.tag-dev{background:var(--muted);color:var(--foreground);border:2px dashed var(--input)}
+@keyframes shine{0%,100%{box-shadow:0 0 0 0 rgb(255 66 57/.5)}60%{box-shadow:0 0 0 10px rgb(255 66 57/0)}}
+@media (prefers-reduced-motion:no-preference){
+ .launch{animation:rise .6s both}.launch-img img{animation:floaty 5s ease-in-out infinite}.launch .spark{animation:twinkle 2.6s ease-in-out infinite}.launch .spark.l2{animation-delay:.9s}
+ .launch .badge-novo,#whatsapp .badge-novo{animation:shine 2.4s ease-out 1s 3}
+}
+@media (max-width:720px){.launch{grid-template-columns:1fr;padding:24px 20px}.launch-img{order:-1;justify-self:start}.launch-img img{width:96px}.news{padding:20px 16px}.news-list li{grid-template-columns:1fr}}
+/* foco programático no card (âncora do banner): sem anel no card inteiro; sublinhado discreto no título, ≥3:1 */
+#whatsapp:focus{outline:none}
+#whatsapp:focus-visible #wa-t{text-decoration:underline 3px var(--ring);text-underline-offset:6px}
+.unsigned .uns-wa{margin:-4px 0 8px}
+@media (max-width:720px){
+ .topbar{flex-wrap:wrap;gap:0;padding:6px 0}.topbar nav{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:0;width:100%}.topbar nav a{padding:0 2px;font-size:.84rem;border-radius:8px;white-space:nowrap}
+ .launch{grid-template-columns:minmax(0,1fr) auto;gap:0 10px;padding:18px 16px;margin-top:4px}.launch-kicker{flex-wrap:wrap;gap:6px 8px}
+ .launch-txt{display:contents}.launch-txt>*{position:relative;z-index:1}.launch-kicker{grid-column:1/-1;grid-row:1}.launch-img{grid-column:2;grid-row:2;order:0;align-self:center;justify-self:end}.launch-img img{width:56px}
+ .launch .launch-title{grid-column:1;grid-row:2;font-size:1.75rem;margin-top:6px}
+ .launch-meta,.launch p:not(.launch-kicker):not(.launch-title),.launch .cta{grid-column:1/-1}
+ .launch-meta{margin-top:10px;gap:6px}.launch-meta div{padding:4px 12px}
+ .launch p:not(.launch-kicker):not(.launch-title){margin-top:10px;font-size:.95rem}
+ .launch .cta{margin-top:14px}.launch a.btn.big{display:flex;justify-content:center;text-align:center;padding:12px 12px;font-size:1rem}
+}
 </style></head><body><a class="skip" href="#downloads">Ir para os downloads</a><main>
-<div class="topbar"><span class="logo" aria-label="ControlFree">Control<b>Free</b></span><nav aria-label="Principal"><a href="#downloads">Downloads</a><a href="#primeira-abertura">Primeira abertura</a></nav></div>
+<div class="topbar"><span class="logo" aria-label="ControlFree">Control<b>Free</b></span><nav aria-label="Principal"><a href="#downloads">Downloads</a><a href="#novidades">Novidades</a><a href="#primeira-abertura">Primeira abertura</a></nav></div>
+<!-- LANÇAMENTO: destaque do Frans WhatsApp no topo -->
+<section class="launch" id="lancamento" aria-labelledby="ln-k ln-t"><div class="launch-txt">
+ <p class="launch-kicker" id="ln-k"><span class="badge-novo">Novo</span><span>Lançamento</span></p>
+ <p class="launch-title" id="ln-t">Frans WhatsApp</p>
+ <dl class="launch-meta"><div><dt>Versão</dt><dd>Prévia 0.1.0-previa.1</dd></div>
+  <div><dt>Lançamento</dt><dd><time datetime="2026-10-20">20 de outubro de 2026</time></dd></div></dl>
+ <p>App local de WhatsApp para atendimento em equipe. Atenção: esta prévia ainda não conecta a um número de WhatsApp de verdade; o pareamento por QR entra na próxima versão.</p>
+ <div class="cta"><a class="btn primary big" href="#whatsapp">Conhecer o Frans WhatsApp</a></div></div>
+ <div class="launch-img" aria-hidden="true"><span class="spark l1"></span><span class="spark l2"></span><img src="celebrate.png" width="171" height="178" alt=""></div></section>
 <header class="hero"><div><h1>Apps <em>Frans</em>,<br>prontos pra rodar.</h1><p>Instale no seu computador. Sem servidor, sem túnel.</p>
  <div class="cta"><a class="btn primary big" href="#downloads">Baixar o Orquestrador</a><a class="btn ghost big" href="#primeira-abertura">Primeira abertura</a></div></div>
  <div class="hero-img"><span class="spark s1" aria-hidden="true"></span><span class="spark s2" aria-hidden="true"></span><span class="spark s3" aria-hidden="true"></span><img src="wave.png" width="260" height="260" alt="Frans, o mascote dragão, acenando"></div></header>
-<aside class="update" aria-labelledby="up-t"><img src="present.png" width="72" height="72" alt="Frans apresentando uma novidade">
- <div><h2 id="up-t">Nova versão disponível: 0.4.4</h2><p>Atualização de segurança e acessibilidade do Frans Orquestrador. Veja abaixo o aviso sobre o instalador sem assinatura e como instalar por cima.</p></div><span class="pill">Novidade</span></aside>
 
 <h2 class="section-title" id="downloads">Escolha seu app</h2><p class="section-sub">Baixe para o seu sistema.</p>
 <div class="grid">
@@ -105,9 +165,58 @@ button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}butt
   <div class="btns"><button type="button" class="btn off" aria-disabled="true">Mac com chip Apple (M1, M2…)<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Mac Intel<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Windows<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Ubuntu/Debian<small>Em desenvolvimento</small></button><button type="button" class="btn off" aria-disabled="true">Linux (AppImage)<small>Em desenvolvimento</small></button></div></section>
  <section class="card" data-repo="frans-orquestrador" aria-labelledby="or-t"><div class="card-head"><img src="celebrate.png" width="64" height="64" alt=""><h2 id="or-t">Frans Orquestrador</h2></div><div class="chips"><span class="chip hot">Nova versão 0.4.4</span></div><p>Monte times de agentes num canvas, ligue terminais e acompanhe tudo.</p><span class="ver">Versão <b class="v">0.4.4</b></span>
   <div class="btns"><a class="btn primary mac" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-mac-arm64.dmg">Mac com chip Apple (M1, M2…)</a><a class="btn primary macx" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-mac-x64.dmg">Mac Intel</a><a class="btn win" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-win-x64.exe">Windows</a><a class="btn deb" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-linux-amd64.deb">Ubuntu/Debian</a><a class="btn lin" href="https://github.com/Pcamargoz/frans-orquestrador-releases/releases/download/v0.4.4/frans-orquestrador-0.4.4-linux-x86_64.AppImage">Linux (AppImage)</a></div><p class="dl-note">Instalador sem assinatura de código: <a href="#uns-t">veja o aviso e o que fazer na primeira abertura</a>.</p></section>
+ <section class="card dev wa" data-dev="1" id="whatsapp" tabindex="-1" aria-labelledby="wa-t"><div class="card-head"><img src="curious.png" width="64" height="64" alt=""><h2 id="wa-t">Frans WhatsApp</h2></div>
+  <div class="devbadge"><div><span class="badge-novo">Novo</span> <span class="badge">Prévia 0.1.0-previa.1</span></div></div>
+  <p>App local de WhatsApp para atendimento em equipe, com conexão por QR code a partir da próxima versão. A sessão fica só no seu computador ou servidor local; nada dela vai para o repositório.</p>
+  <p class="wa-limite" id="wa-limite"><b>O que tem nesta prévia:</b> o app ainda não conecta a um número de WhatsApp de verdade. O pareamento por QR code entra na próxima versão.</p>
+  <div class="wa-tabs" role="tablist" aria-label="Sistema do instalador do Frans WhatsApp">
+   <button type="button" role="tab" id="wa-tab-win" aria-controls="wa-p-win" aria-selected="true">Windows</button>
+   <button type="button" role="tab" id="wa-tab-mac" aria-controls="wa-p-mac" aria-selected="false" tabindex="-1">macOS</button></div>
+  <div class="wa-panel" id="wa-p-win" role="tabpanel" aria-labelledby="wa-tab-win" tabindex="0"><div class="wa-warn"><p><b>Sem assinatura de código.</b> Por isso o SmartScreen do Windows mostra um aviso na primeira abertura. Isso é esperado.</p><ul>
+   <li>Na tela “Windows protegeu seu PC”, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</li>
+   <li>Baixe sempre desta página e não de outro lugar.</li></ul></div>
+   <div class="wa-file" id="wa-f-exe">
+    <h3 class="wa-file-t">Windows · instalador (.exe)</h3>
+    <dl class="wa-meta"><div><dt>Arquivo</dt><dd><code>Frans-WhatsApp-Setup-0.1.0-previa.1.exe</code></dd></div>
+     <div><dt>Tamanho</dt><dd>105,6 MB <span class="wa-bytes">(110.701.269 bytes)</span></dd></div>
+     <div><dt>sha512</dt><dd><code>c7bb1c34784d93bf76daa8f50767a92629c42ab748843094b3f481f500021f9505ed96db38f5f1845ff4bf8eb00746177722864404e65e6bb2a82f05e78c079e</code></dd></div></dl>
+    <a class="btn primary" href="https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.1/Frans-WhatsApp-Setup-0.1.0-previa.1.exe" download>Baixar instalador (.exe)</a>
+   </div>
+   <div class="wa-file" id="wa-f-winzip">
+    <h3 class="wa-file-t">Windows · portátil (.zip)</h3>
+    <dl class="wa-meta"><div><dt>Arquivo</dt><dd><code>Frans-WhatsApp-win-x64-0.1.0-previa.1.zip</code></dd></div>
+     <div><dt>Tamanho</dt><dd>146,4 MB <span class="wa-bytes">(153.485.848 bytes)</span></dd></div>
+     <div><dt>sha512</dt><dd><code>9430d32f8f96a319e3bd14ab0809efaed486faf2d38e80debfc4ab1ab8880185229917c21b6faf1c59b188de4cee784c03b3ad09d6bb0528e8900e0178bf8f50</code></dd></div></dl>
+    <a class="btn primary" href="https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.1/Frans-WhatsApp-win-x64-0.1.0-previa.1.zip" download>Baixar portátil (.zip)</a>
+   </div>
+   <p class="wa-note">Portátil: descompacte o .zip numa pasta e abra o <b>Frans WhatsApp.exe</b>. Não precisa instalar.</p></div>
+  <div class="wa-panel" id="wa-p-mac" role="tabpanel" aria-labelledby="wa-tab-mac" tabindex="0"><div class="wa-warn"><p><b>Atenção, Mac: leia antes de baixar.</b></p><ul>
+   <li><b>Só Intel (x64).</b> Não há versão nativa para chip Apple (M1, M2…). Nesses Macs o app roda pelo Rosetta 2; se o Rosetta não estiver instalado, o macOS oferece instalar na primeira abertura.</li>
+   <li><b>Sem assinatura e sem notarização da Apple.</b> Não há conta Apple Developer, então o Gatekeeper pergunta antes de abrir. Isso é esperado.</li>
+   <li><b>Como seguir:</b> descompacte o .zip e arraste o <b>Frans WhatsApp</b> para Aplicativos.</li>
+   <li><b>No macOS 15 ou mais novo:</b> abra o app uma vez, vá em <b>Ajustes do Sistema › Privacidade e Segurança</b>, role até a mensagem sobre o Frans WhatsApp e clique em <b>Abrir mesmo assim</b>.</li>
+   <li><b>No macOS 14 ou anterior:</b> clique com o botão direito no app (ou Control + clique) e escolha <b>Abrir</b>.</li></ul></div>
+   <div class="wa-file" id="wa-f-mac">
+    <h3 class="wa-file-t">macOS · Intel x64 (.zip)</h3>
+    <dl class="wa-meta"><div><dt>Arquivo</dt><dd><code>Frans-WhatsApp-0.1.0-previa.1-mac.zip</code></dd></div>
+     <div><dt>Tamanho</dt><dd>123,0 MB <span class="wa-bytes">(128.929.651 bytes)</span></dd></div>
+     <div><dt>sha512</dt><dd><code>bf3b9e30ce1c22f452172bb544217738741046fd28cbb8e92ace6acaea119859e03d2fbf3d3395470239086fdf75b9442a2c33d2d149a26a9c2b14b549ea447f</code></dd></div></dl>
+    <a class="btn primary" href="https://github.com/Pcamargoz/frans-releases/releases/download/whatsapp-v0.1.0-previa.1/Frans-WhatsApp-0.1.0-previa.1-mac.zip" download>Baixar Intel x64 (.zip)</a>
+   </div></div>
+  <p class="wa-risk"><b>Aviso:</b> Este app usa uma conexão não oficial com o WhatsApp. O uso intenso pode levar ao bloqueio do número; recomendamos começar com poucas mensagens.</p>
+  <dl class="wa-meta"><div><dt>Versão</dt><dd>0.1.0-previa.1</dd></div></dl>
+  <p class="wa-note">Tamanhos em MB de 1.048.576 bytes (1024 × 1024), com o valor exato em bytes ao lado. O sha512 protege contra corrupção do arquivo, não contra comprometimento do repositório. Baixe sempre desta página.</p></section>
 </div>
+<section class="news" id="novidades" aria-labelledby="nv-t"><h2 id="nv-t" class="section-title">Novidades</h2><p class="section-sub">O que mudou nos apps desta página.</p>
+<ol class="news-list">
+ <li><p class="news-tag"><span class="badge-novo">Novo</span></p><div><h3>Frans WhatsApp · prévia 0.1.0-previa.1</h3><p>App local de WhatsApp para atendimento em equipe, com instalador (.exe) e versão portátil (.zip) para Windows e um .zip para Mac Intel (x64). Atenção: esta prévia ainda não conecta a um número de WhatsApp de verdade; o pareamento por QR entra na próxima versão.</p><p class="news-links"><a href="#whatsapp">Ver o Frans WhatsApp</a></p></div></li>
+ <li><p class="news-tag"><span class="tag-up">Atualização</span></p><div><h3>Frans Orquestrador 0.4.4</h3><p>Atualização de segurança e acessibilidade, com downloads para Mac (chip Apple e Intel), Windows, Ubuntu/Debian e Linux (AppImage). O instalador não tem assinatura de código.</p><p class="news-links"><a href="#uns-t">Veja o aviso</a><a href="#over-t">Como instalar por cima</a></p></div></li>
+ <li><p class="news-tag"><span class="tag-dev">Em desenvolvimento</span></p><div><h3>Frans Editor</h3><p>Estamos evoluindo bastante o Editor. Em breve ele volta para download.</p></div></li>
+</ol></section>
 <section class="unsigned" aria-labelledby="uns-t"><h2 id="uns-t" tabindex="-1">Instalador sem assinatura de código nesta versão</h2>
 <p>O instalador da 0.4.4 não tem assinatura de código. Por isso o seu sistema vai mostrar um aviso na primeira abertura. Isso é esperado.</p>
+<p>A prévia do Frans WhatsApp (0.1.0-previa.1) também não tem assinatura: no Windows, o SmartScreen pode avisar na primeira abertura, e no Mac o Gatekeeper bloqueia a primeira abertura.</p>
+<p class="uns-wa"><a href="#whatsapp">Veja como seguir no card do Frans WhatsApp</a></p>
 <p><b>A atualização automática ainda não verifica quem assinou o instalador.</b> Baixe sempre desta página e não de outro lugar.</p>
 <div class="uns-grid"><div><h3>Windows</h3><p>Na tela “Windows protegeu seu PC”, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</p></div>
 <div><h3>Mac</h3><p>Não há conta Apple Developer, então o Gatekeeper pergunta antes de abrir. No macOS 15 ou mais novo, abra o app uma vez, vá em <b>Ajustes do Sistema › Privacidade e Segurança</b>, role até a mensagem sobre o Frans e clique em <b>Abrir mesmo assim</b>. Em macOS mais antigo, também funciona clicar com o botão direito no app e escolher <b>Abrir</b>.</p></div>
@@ -147,12 +256,12 @@ button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}butt
   <div class="cmd"><pre>./frans-*.AppImage</pre><button type="button" data-copy>Copiar</button></div></div>
  <div class="sr" role="status" aria-live="polite" id="copy-status"></div>
 </section>
-<footer role="contentinfo">ControlFree · Os downloads do Orquestrador apontam para a versão estável atual.</footer>
+<footer>ControlFree · Os downloads do Orquestrador apontam para a versão estável atual.</footer>
 </main>
 <!-- LINKS FIXOS NA v0.4.4 (tag explícita, sem consultar "latest"). A troca para outra versão é MANUAL: só depois da verificação da QA (sha512 e latest*.yml). --><script>
 (function(){const tabs=[...document.querySelectorAll('.first [role=tab]')];document.querySelector('.tabs').hidden=false;
  const sel=t=>{tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})};
- sel(tabs[0]);tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];if(k){const n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault()}})});
+ sel(tabs[0]);tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const k={ArrowRight:1,ArrowLeft:-1}[e.key];const hm={Home:0,End:tabs.length-1}[e.key];if(hm!==undefined){sel(tabs[hm]);tabs[hm].focus();e.preventDefault()}else if(k){const n=tabs[(i+k+tabs.length)%tabs.length];sel(n);n.focus();e.preventDefault()}})});
  const st=document.getElementById('copy-status');
  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
   const txt=b.parentNode.querySelector('pre').textContent;
@@ -161,4 +270,6 @@ button.btn.off{font:inherit;font-weight:600;text-align:left;min-height:44px}butt
   if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(txt).then(done,fb);else fb()}));
 })();
 </script>
+<script>(function(){var t=[].slice.call(document.querySelectorAll('.wa-tabs [role=tab]'));function sel(x){t.forEach(function(y){var on=y===x;y.setAttribute('aria-selected',on);y.tabIndex=on?0:-1;document.getElementById(y.getAttribute('aria-controls')).hidden=!on})}
+sel(t[0]);t.forEach(function(x,i){x.addEventListener('click',function(){sel(x)});x.addEventListener('keydown',function(e){var k={ArrowRight:1,ArrowLeft:-1}[e.key];var hm={Home:0,End:t.length-1}[e.key];if(hm!==undefined){sel(t[hm]);t[hm].focus();e.preventDefault()}else if(k){var n=t[(i+k+t.length)%t.length];sel(n);n.focus();e.preventDefault()}})})})();</script>
 </body></html>
